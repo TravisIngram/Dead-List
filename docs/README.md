@@ -36,9 +36,25 @@
 
 ## Diagrams
 
-
 ### Interface Diagrams
 
+The following images are the initial UI design mockups.  They are subject to change based on the technical implementation.
+
+#### Main View
+
+![Main View](https://github.com/TravisIngram/Dead-List/blob/main/docs/imgs/DL_01_Main.png)
+
+#### Call Detail View
+
+![Call Detail View](https://github.com/TravisIngram/Dead-List/blob/main/docs/imgs/DL_02_call_detail.png)
+
+#### All Calls View
+
+![All Calls View](https://github.com/TravisIngram/Dead-List/blob/main/docs/imgs/DL_03_all_calls.png)
+
+#### Make Call View
+
+![Make Call View](https://github.com/TravisIngram/Dead-List/blob/main/docs/imgs/DL_04_make_call.png)
 
 ### Architectural Diagrams
 
