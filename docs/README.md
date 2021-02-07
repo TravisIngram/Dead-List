@@ -10,37 +10,53 @@ The **User Stories** for site visitors, members, and site administrator are list
 **Unauthenticated User**
 
 1. As a _visitor_ to the Dead List I want to _browse_ recent celebrity deaths in order to _learn about them_ and read the puns that members of the site made about them.
- * AC:
+ * **Acceptance Criteria:**
+   * The site has proper views that display each call that was made as well as the images and biographical information about the deceased.
 
 **Authenticated User**
 
 2. As a _member_ of the Dead List, I want to be able to _post_ (`call`) a new death _in order to be the first person to do so_.
- * AC:
+ * **Acceptance Criteria:**
+   * Members can click on the `Make Call` button and enter the necessary information to add a new post.
 
-3. As a _member_ of the Dead List, I want to be able to _respond_ to other users posts (`calls`), _in order to share puns_.
- * AC:
+3. As a _member_ of the Dead List, I want to be able to _edit_ any posts (`puns`) I make _in order to clarify intent or correct mistakes_.
+ * **Acceptance Criteria:**
+   * Members can select and edit their own calls or puns for clarity or to add more information.
 
-4. As a _member_ of the Dead List, I want to be able to _edit_ any posts (`puns`) I make _in order to clarify intent or correct mistakes_.
- * AC:
+4. As a _member_ of the Dead List, I want to be able to _respond_ to other users posts (`calls`), _in order to share puns_.
+ * **Acceptance Criteria:**
+   * Members are able to add or make puns related to a given call.
 
-5. As a _member_ of the Dead List, I want to be able to _rate_ other users comments (`puns`) _in order to show my appreciation_ for their humor.
- * AC:
+5. As a _member_ of the Dead List, I want to be able to _rate_ other users comments (`puns`) _in order to show my appreciation or aversion_ for their humor.
+ * **Acceptance Criteria:**
+   * Members are able to up or down vote puns other users make on a given call.
+   * Ratings are displayed next to each pun
 
 **Admin User**
 
 6. As the _administrator_ of the Dead List, I want to be able to _manage_ users of the site (remove) _in order to maintain a positive environment_.
- * AC:
+ * **Acceptance Criteria:**
+   * The administrator is able to remove / delete a user from the site.
 
 7. As the _administrator_ of the Dead List, I want to be able to _manage_ (edit) posts (calls / puns) made to the site _in order to ensure negative or offensive content isn't shared_.
- * AC:
+ * **Acceptance Criteria:**
+   * The administrator is able to remove any call or pun made.
+   * The administrator is able to update the content of any call or pun made.
 
 ### Acceptance Criteria
 
 ### Mis-user Stories
 
-* As an _authenticated_ mis-user I want to deface the site by inserting malicious code in free-form text fields.
+The **Mis-user Stories** for a michevious member, disgruntled member, cheating member are listed below.  The **Mitigation Criteria** are listed in-line with each story.
 
-* As an _authenticated_ mis-user I want to redirect visitors to a malicious site by adding malformed links via text fields.
+1. As a _michevious member_ I want to _deface the site_ by _inserting malicious code_ in to free-form text fields.
+ * MC:
+
+2. As a _disgruntled member_ I want to _redirect visitors_ to a malicious site by _adding malformed links_ via text fields.
+ * MC:
+
+3. As a _cheating member_ I want to _modify timestamps_ of my calls by _editing other users posts_.
+ * MC:
 
 ### Mitigation Criteria
 
