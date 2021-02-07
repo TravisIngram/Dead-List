@@ -4,25 +4,35 @@
 
 ### User Stories
 
+The **User Stories** for site visitors, members, and site administrator are listed below.  The **Acceptance Criteria** are listed in-line with each story.
+
+
 **Unauthenticated User**
 
-* As an _unauthenticated_ user I want to browse recent celebrity deaths and select individuals to read more about them and what folks had to say.
+1. As a _visitor_ to the Dead List I want to _browse_ recent celebrity deaths in order to _learn about them_ and read the puns that members of the site made about them.
+ * AC:
 
 **Authenticated User**
 
-* As an _authenticated_ user I want to be able to post ('call') a new celebrity death.
+2. As a _member_ of the Dead List, I want to be able to _post_ (`call`) a new death _in order to be the first person to do so_.
+ * AC:
 
-* As an _authenticated_ user I want to be able to edit my posts.
+3. As a _member_ of the Dead List, I want to be able to _respond_ to other users posts (`calls`), _in order to share puns_.
+ * AC:
 
-* As an _authenticated_ user I want to be able to respond to other users posts.
+4. As a _member_ of the Dead List, I want to be able to _edit_ any posts (`puns`) I make _in order to clarify intent or correct mistakes_.
+ * AC:
 
-* As an _authenticated_ user I want to be able to rate other users comments (puns).
+5. As a _member_ of the Dead List, I want to be able to _rate_ other users comments (`puns`) _in order to show my appreciation_ for their humor.
+ * AC:
 
 **Admin User**
 
-* As an _administrator_ (admin user) I want to be able to manage users of the site. (add / remove)
+6. As the _administrator_ of the Dead List, I want to be able to _manage_ users of the site (remove) _in order to maintain a positive environment_.
+ * AC:
 
-* As an _administrator_ (admin user) I want to be able to manage posts made to the site. (add / remove)
+7. As the _administrator_ of the Dead List, I want to be able to _manage_ (edit) posts (calls / puns) made to the site _in order to ensure negative or offensive content isn't shared_.
+ * AC:
 
 ### Acceptance Criteria
 
