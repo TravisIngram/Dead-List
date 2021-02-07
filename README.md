@@ -3,8 +3,6 @@ A web application used for documenting and discussing recently the deceased.
 
 The intent of this application is to replicate and eventually replace and preserve a longstanding 'game' traditionally played through a listserve.  Members of which would send a properly formatted email notifying the group of a recently passed famous person along with basic details of their death.  Usually in the form of a link to a reputable website / news organization.  Other participants would then reply with puns based on the work of the individual that had passed.
 
-
-
 ## Installation
 
 > The following installation instructions are subject to change based on the final technical implementation of the application.  They will likely still include steps similar to those outlined below.
@@ -32,11 +30,21 @@ See [these instructions](https://git-scm.com/book/en/v2/Getting-Started-Installi
 
 From here the application should be ready to launch.
 
+----
+
 ## Getting Started
 
 Once installed, run the following command to launch the application.
 
 `docker-compose up`
+
+### Application Use
+
+Visitors of the site are able to view `calls` and information about the recently deceased.
+
+Once registered, members of the site are able to make new calls by clicking on the `Make Call` button.  They will also be able to post replies or `puns` to other users calls.  Rating puns is also possible by up or down voting them.
+
+----
 
 ## License
 
