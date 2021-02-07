@@ -2,18 +2,17 @@
 
 ## User Stories
 
-### User Stories
-
 The **User Stories** for site visitors, members, and site administrator are listed below.  The **Acceptance Criteria** are listed in-line with each story.
 
 
-**Unauthenticated User**
+### Unauthenticated User
 
 1. As a _visitor_ to the Dead List I want to _browse_ recent celebrity deaths in order to _learn about them_ and read the puns that members of the site made about them.
  * **Acceptance Criteria:**
-   * The site has proper views that display each call that was made as well as the images and biographical information about the deceased.
+   * The site has proper views that display each call that was made.
+   * The views contain images and biographical information about the deceased.
 
-**Authenticated User**
+### Authenticated User
 
 2. As a _member_ of the Dead List, I want to be able to _post_ (`call`) a new death _in order to be the first person to do so_.
  * **Acceptance Criteria:**
@@ -32,7 +31,7 @@ The **User Stories** for site visitors, members, and site administrator are list
    * Members are able to up or down vote puns other users make on a given call.
    * Ratings are displayed next to each pun
 
-**Admin User**
+### Administrator User
 
 6. As the _administrator_ of the Dead List, I want to be able to _manage_ users of the site (remove) _in order to maintain a positive environment_.
  * **Acceptance Criteria:**
@@ -43,22 +42,26 @@ The **User Stories** for site visitors, members, and site administrator are list
    * The administrator is able to remove any call or pun made.
    * The administrator is able to update the content of any call or pun made.
 
-### Acceptance Criteria
+----
 
 ### Mis-user Stories
 
-The **Mis-user Stories** for a michevious member, disgruntled member, cheating member are listed below.  The **Mitigation Criteria** are listed in-line with each story.
+The **Mis-user Stories** for a mischievous member, disgruntled member, cheating member are listed below.  The **Mitigation Criteria** are listed in-line with each story.
 
-1. As a _michevious member_ I want to _deface the site_ by _inserting malicious code_ in to free-form text fields.
- * MC:
+1. As a _mischievous member_ I want to _deface the site_ by _inserting malicious code_ when posting.
+ * Mitigation Criteria:
+   * Validate input from all fields.
+   * Use Object-Relational Mapping instead of raw SQL when communicating with the DB.
 
-2. As a _disgruntled member_ I want to _redirect visitors_ to a malicious site by _adding malformed links_ via text fields.
- * MC:
+2. As a _disgruntled member_ I want to _redirect visitors_ to a malicious site by _adding new HTML/JS_ via text fields.
+ * Mitigation Criteria:
+   * Ensure input is properly escaped.
 
-3. As a _cheating member_ I want to _modify timestamps_ of my calls by _editing other users posts_.
- * MC:
+3. As a _cheating member_ I want to _add upvotes_ of my posts by _editing my rating count_.
+ * Mitigation Criteria:
+   * Ensure proper permissions exist so users can only modify specific fields of their own posts.
 
-### Mitigation Criteria
+----
 
 ## Diagrams
 
