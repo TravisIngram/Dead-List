@@ -56,5 +56,16 @@ The following images are the initial UI design mockups.  They are subject to cha
 
 ![Make Call View](https://github.com/TravisIngram/Dead-List/blob/main/docs/imgs/DL_04_make_call.png)
 
-### Architectural Diagrams
+### Architectural Diagrams (C4)
 
+#### Level 1: System Context Diagram
+
+![System Context Diagram](https://github.com/TravisIngram/Dead-List/blob/main/docs/imgs/DL_C4_Context.png)
+
+#### Level 2: Container Diagram
+
+![Container Diagram](https://github.com/TravisIngram/Dead-List/blob/main/docs/imgs/DL_C4_Container.png)
+
+#### Level 3: Component Diagram
+
+![Component Diagram](https://github.com/TravisIngram/Dead-List/blob/main/docs/imgs/DL_C4_Component.png)
