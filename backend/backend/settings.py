@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import os
 import json
 from pathlib import Path
 
@@ -16,7 +17,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load config file that stores keys and other data...
-with open(BASE_DIR + '/backend/config.json', 'r') as config:
+with open(str(BASE_DIR) + '/backend/config.json', 'r') as config:
     obj = json.load(config)
 
 # Quick-start development settings - unsuitable for production
