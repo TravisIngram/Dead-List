@@ -71,7 +71,7 @@ class Deceased(models.Model):
     deceasedName = models.CharField(max_length=200, blank=False)
     biography = models.CharField(max_length=500, blank=False)
     link = models.URLField(max_length=300, blank=True,
-                           validators=URLValidator(schemes=['http', 'https']))
+                           validators=[URLValidator(schemes=['http', 'https'])])
     dateOfDeath = models.CharField(max_length=200, blank=False)
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     createdAt = models.DateTimeField(auto_now_add=True)
