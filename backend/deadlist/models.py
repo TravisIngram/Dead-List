@@ -78,4 +78,4 @@ class Deceased(models.Model):
     updatedAt = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return str(self.name)
+        return str(self.deceasedName)
