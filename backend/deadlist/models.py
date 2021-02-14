@@ -68,13 +68,12 @@ class Call(models.Model):
 
 
 class Deceased(models.Model):
-    name = models.CharField(max_length=200, blank=False)
+    deceasedName = models.CharField(max_length=200, blank=False)
     biography = models.CharField(max_length=500, blank=False)
     link = models.URLField(max_length=300, blank=True,
                            validators=URLValidator(schemes=['http', 'https']))
     dateOfDeath = models.CharField(max_length=200, blank=False)
-    punRating = models.IntegerField(
-        validators=[MaxValueValidator(5), MinValueValidator(1)])
+    username = models.ForeignKey(User, on_delete=models.CASCADE)
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
 
