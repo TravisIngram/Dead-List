@@ -176,7 +176,7 @@ class DeceasedDetail(APIView):
         deceased.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-# Get all users in DB or create / add a new one
+# Get all decedents in DB or create / add a new one
 
 
 class DeceasedList(APIView):
