@@ -7,7 +7,12 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('about');
+  this.route('index');
   this.route('all-calls');
+  this.route('my-calls');
+  this.route('call-detail');
+  this.route('make-call');
+  this.route('log-in');
+  this.route('register');
 
 });
