@@ -14,5 +14,5 @@ Router.map(function () {
   this.route('make-call');
   this.route('log-in');
   this.route('register');
-
+  
 });

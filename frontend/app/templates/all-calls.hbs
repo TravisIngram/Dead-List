@@ -5,3 +5,29 @@
     Select an item to learn more about the deceased and what other folks think.
   </p>
 </Jumbo>
+
+<div class="call">
+  {{#each model as |call|}}
+  <div class="results">
+    {{call.user}}
+    {{call.deceased}}
+    {{call.dateOfDeath}}
+    {{call.source}}
+    {{call.rating}}
+  </div>
+  {{/each}}
+</div>
+
+<div class="call">
+  <ul class="results">
+    <li>
+      <Call />
+    </li>
+    <li>
+      <Call />
+    </li>
+    <li>
+      <Call />
+    </li>
+  </ul>
+</div>
