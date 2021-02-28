@@ -67,7 +67,7 @@ class Call(models.Model):
     updatedAt = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return str(self.title)
+        return str(self.deceasedName)
 
 # Pun Model - Content, Timestamp, Rating, User (fk), Call (fk)
 
