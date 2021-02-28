@@ -12,15 +12,15 @@ class UserSerializer(serializers.ModelSerializer):
 class PunSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pun
-        fields = ('content', 'punRating', 'username',
+        fields = ('punContent', 'punRating', 'username', 'call',
                   'createdAt', 'updatedAt')
 
 
 class CallSerializer(serializers.ModelSerializer):
     class Meta:
         model = Call
-        fields = ('title', 'callRating', 'username', 'pun',
-                  'comment', 'createdAt', 'updatedAt')
+        fields = ('deceasedName', 'callRating', 'username', 'source',
+                  'comment', 'dateOfDeath', 'createdAt', 'updatedAt')
 
 
 class DeceasedSerializer(serializers.ModelSerializer):
