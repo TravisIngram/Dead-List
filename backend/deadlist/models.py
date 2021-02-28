@@ -33,21 +33,6 @@ class User(models.Model):
     def __str__(self):
         return str(self.username)
 
-# Pun Model - Content, Timestamp, Rating, User (fk), Call (fk)
-# Name, Date of Death, Biography, Link
-
-
-class Pun(models.Model):
-    punContent = models.CharField(max_length=300, blank=False)
-    punRating = models.IntegerField(
-        validators=[MaxValueValidator(5), MinValueValidator(1)])
-    call = models.ForeignKey(Call, on_delete=models.CASCADE)
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
-    createdAt = models.DateTimeField(auto_now_add=True)
-    updatedAt = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return str(self.username)
 
 # Deceased Model - Name, Date of Death, Biography, Link
 
@@ -83,3 +68,18 @@ class Call(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+# Pun Model - Content, Timestamp, Rating, User (fk), Call (fk)
+
+
+class Pun(models.Model):
+    punContent = models.CharField(max_length=300, blank=False)
+    punRating = models.IntegerField(
+        validators=[MaxValueValidator(5), MinValueValidator(1)])
+    call = models.ForeignKey(Call, on_delete=models.CASCADE)
+    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.username)
