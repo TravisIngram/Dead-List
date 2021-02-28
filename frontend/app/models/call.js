@@ -6,5 +6,5 @@ export default class CallModel extends Model {
   @attr dateOfDeath;
   @attr source;
   @attr image;
-  @attr rating;
+  @attr callRating;
 }
