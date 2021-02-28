@@ -41,6 +41,7 @@ class Pun(models.Model):
     punContent = models.CharField(max_length=300, blank=False)
     punRating = models.IntegerField(
         validators=[MaxValueValidator(5), MinValueValidator(1)])
+    call = models.ForeignKey(Call, on_delete=models.CASCADE)
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
@@ -69,15 +70,14 @@ class Deceased(models.Model):
 
 class Call(models.Model):
     deceasedName = models.CharField(max_length=200, blank=False)
+    dateOfDeath = models.CharField(
+        max_length=200, blank=False, default='01/01/2000')
     source = models.URLField(max_length=300, blank=True,
                              validators=[URLValidator(schemes=['http', 'https'])])
-    callRating = models.IntegerField(
-        validators=[MaxValueValidator(5), MinValueValidator(1)])
+    callRating = models.IntegerField(blank=True,
+                                     validators=[MaxValueValidator(5), MinValueValidator(1)])
     username = models.ForeignKey(User, on_delete=models.CASCADE)
-    punContent = models.ForeignKey(Pun, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=300, blank=False)
-    callRating = models.IntegerField(
-        validators=[MaxValueValidator(5), MinValueValidator(1)])
+    comment = models.CharField(max_length=300, blank=True)
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
 
