@@ -48,26 +48,6 @@ class Pun(models.Model):
     def __str__(self):
         return str(self.username)
 
-# Call Model - Title, Source, Comment, created, Rating, Caller (fk), Pun (fk)
-
-
-class Call(models.Model):
-    deceasedName = models.ForeignKey(Deceased, on_delete=models.CASCADE)
-    source = models.URLField(max_length=300, blank=True,
-                             validators=[URLValidator(schemes=['http', 'https'])])
-    callRating = models.IntegerField(
-        validators=[MaxValueValidator(5), MinValueValidator(1)])
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
-    punContent = models.ForeignKey(Pun, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=300, blank=False)
-    callRating = models.IntegerField(
-        validators=[MaxValueValidator(5), MinValueValidator(1)])
-    createdAt = models.DateTimeField(auto_now_add=True)
-    updatedAt = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return str(self.title)
-
 # Deceased Model - Name, Date of Death, Biography, Link
 
 
@@ -83,3 +63,23 @@ class Deceased(models.Model):
 
     def __str__(self):
         return str(self.deceasedName)
+
+# Call Model - Title, Source, Comment, created, Rating, Caller (fk), Pun (fk)
+
+
+class Call(models.Model):
+    deceasedName = models.CharField(max_length=200, blank=False)
+    source = models.URLField(max_length=300, blank=True,
+                             validators=[URLValidator(schemes=['http', 'https'])])
+    callRating = models.IntegerField(
+        validators=[MaxValueValidator(5), MinValueValidator(1)])
+    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    punContent = models.ForeignKey(Pun, on_delete=models.CASCADE)
+    comment = models.CharField(max_length=300, blank=False)
+    callRating = models.IntegerField(
+        validators=[MaxValueValidator(5), MinValueValidator(1)])
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.title)
