@@ -38,7 +38,7 @@ class User(models.Model):
 
 
 class Pun(models.Model):
-    content = models.CharField(max_length=300, blank=False)
+    punContent = models.CharField(max_length=300, blank=False)
     punRating = models.IntegerField(
         validators=[MaxValueValidator(5), MinValueValidator(1)])
     username = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -52,12 +52,16 @@ class Pun(models.Model):
 
 
 class Call(models.Model):
-    title = models.CharField(max_length=100, blank=False)
+    deceasedName = models.ForeignKey(Deceased, on_delete=models.CASCADE)
+    source = models.URLField(max_length=300, blank=True,
+                             validators=[URLValidator(schemes=['http', 'https'])])
     callRating = models.IntegerField(
         validators=[MaxValueValidator(5), MinValueValidator(1)])
     username = models.ForeignKey(User, on_delete=models.CASCADE)
-    pun = models.ForeignKey(Pun, on_delete=models.CASCADE)
+    punContent = models.ForeignKey(Pun, on_delete=models.CASCADE)
     comment = models.CharField(max_length=300, blank=False)
+    callRating = models.IntegerField(
+        validators=[MaxValueValidator(5), MinValueValidator(1)])
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now_add=True)
 
