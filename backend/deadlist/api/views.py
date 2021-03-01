@@ -3,9 +3,77 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+from django.contrib.auth import authenticate, login, logout
+from rest_framework.permissions import *
+from rest_framework.decorators import *
+from rest_framework.authentication import *
+
 from deadlist.models import User, Pun, Call, Deceased
 from .serializers import UserSerializer, PunSerializer, CallSerializer, DeceasedSerializer
 
+
+# Register route, basis from webservice lab...
+
+class Register(APIView):
+    def post(self, request, *args, **kwargs):
+        # Login
+        # you need to apply validators to these
+        username = request.POST.get('username')
+        print(username)
+        # you need to apply validators to these
+        password = request.POST.get('password')
+        # you need to apply validators to these
+        email = request.POST.get('email')
+
+        print(request.POST.get('username'))
+        if User.objects.filter(username=username).exists():
+            return Response({'username': 'Username is taken.', 'status': 'error'})
+        elif User.objects.filter(email=email).exists():
+            return Response({'email': 'Email is taken.', 'status': 'error'})
+
+        # especially before you pass them in here
+        newuser = User.objects.create_user(
+            email=email, username=username, password=password)
+
+        return Response({'status': 'success', 'userid': newuser.id})
+
+# Session route, basis from webservice lab...
+
+
+class Session(APIView):
+    def form_response(self, isauthenticated, userid, username, error=""):
+        data = {
+            'isauthenticated': isauthenticated,
+            'userid': userid,
+            'username': username
+        }
+        if error:
+            data['message'] = error
+
+        return Response(data)
+
+    def get(self, request, *args, **kwargs):
+        # Get the current user
+        if request.user.is_authenticated():
+            return self.form_response(True, request.user.id, request.user.username)
+        return self.form_response(False, None, None)
+
+    def post(self, request, *args, **kwargs):
+        # Login
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return self.form_response(True, user.id, user.username)
+            return self.form_response(False, None, None, "Account is suspended")
+        return self.form_response(False, None, None, "Invalid username or password")
+
+    def delete(self, request, *args, **kwargs):
+        # Logout
+        logout(request)
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 # User routes, Get / Update / Delete a specific user...
 
