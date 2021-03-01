@@ -8,9 +8,19 @@ The intent of this application is to replicate and eventually replace and preser
 > The following installation instructions are subject to change based on the final technical implementation of the application.  They will likely still include steps similar to those outlined below.
 
 ### Required Software
-In order to increase the portability and ease of installation and use, this application was built to take advantage of Docker containers.
+While the intent of this project was to ensure the application was portable and easily installed via Docker, that particular functionality hasn't been implemented.
 
-As such users will need to have `Docker` installed to setup and run the app.
+To install this application locally you will need to have Python and Django installed on your computer.
+
+Please see [these instructions](https://docs.djangoproject.com/en/3.1/topics/install/) for more information on how to install `Django` and `Python` on your machine.
+
+In addition, you will need `Node.js` and the `Ember CLI`. Instructions for these can be found in the `frontend` directory.
+
+----
+
+**In the future**, this app will make use of Docker so we'll keep the instructions below.
+
+In order to run the app, `Docker` needs to be installed.
 Please see [these instructions](https://docs.docker.com/desktop/) for more information on how to install `Docker` on your machine.
 
 The only other software needed to retrieve and run this application is `Git`.
@@ -20,23 +30,29 @@ See [these instructions](https://git-scm.com/book/en/v2/Getting-Started-Installi
 ### Installing the application
 
 * Clone this repository
- * `git clone git@github.com:TravisIngram/Dead-List.git`
-* From the root directory, run the following command
- * docker-compose build
-* Once built you will want to run the following commands within the containerized environment.
- * docker-compose run django bash
- * python3 manage.py migrate
- * exit
+  * `git clone git@github.com:TravisIngram/Dead-List.git`
+* From the `backend` directory, run the following command
+  * `python3 manage.py makemigrations`
+  * `python3 manage.py migrate`
+* Once these commands are run, the backend API will be ready to launch.
+* From there, you will need to refer to the install instructions available for the [frontend](https://github.com/TravisIngram/Dead-List/tree/main/frontend).
 
-From here the application should be ready to launch.
+From here the application (in its current state) should be ready to launch.
 
 ----
 
 ## Getting Started
 
-Once installed, run the following command to launch the application.
+Once installed, run the following commands to launch the application.
 
-`docker-compose up`
+From the command line `cd` to the `backend` directory.
+ * `python3 manage.py runserver`
+   * `http://127.0.0.1:8000/admin`
+
+In a separate window, `cd` to the frontend` directory.
+* `ember serve`
+  * Visit the app at `http://localhost:4200/index`
+
 
 ### Application Use
 
