@@ -8,7 +8,7 @@ The intent of this application is to replicate and eventually replace and preser
 > The following installation instructions are subject to change based on the final technical implementation of the application.  They will likely still include steps similar to those outlined below.
 
 ### Required Software
-While the intent of this project was to ensure the application was portable and easily installed via Docker, that particular functionality hasn't been implemented.
+> While the intent of this project was to ensure the application was portable and easily installed via Docker, that particular functionality hasn't been implemented.
 
 To install this application locally you will need to have Python and Django installed on your computer.
 
@@ -47,9 +47,10 @@ Once installed, run the following commands to launch the application.
 
 From the command line `cd` to the `backend` directory.
  * `python3 manage.py runserver`
-   * `http://127.0.0.1:8000/admin`
+   * Interact with the API at `http://127.0.0.1:8000/api`
+   * Interact with the Admin at `http://127.0.0.1:8000/admin`
 
-In a separate window, `cd` to the frontend` directory.
+In a separate window, `cd` to the `frontend` directory.
 * `ember serve`
   * Visit the app at `http://localhost:4200/index`
 
